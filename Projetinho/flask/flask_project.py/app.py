@@ -19,7 +19,5 @@ def books():
     books = get_books()
     return render_template('base.html', books=books)
 
-
-
 if __name__ == '__main__':
     app.run(debug=True)

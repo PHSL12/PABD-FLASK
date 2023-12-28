@@ -1,12 +1,6 @@
-<!-- templates/index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
 <body>
     <h1>Bíblioteca do PH</h1>
     <table>
@@ -31,5 +25,4 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+{% endblock %}

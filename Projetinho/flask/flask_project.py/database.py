@@ -66,22 +66,9 @@ def get_books():
     conn.close()
     return books
 
-def create_books():
-    conn = conectar_db()
-    cur = conn.cursor()
-    cur.execute("""
-    INSERT books id, title, autor, year, gender
-    Values
-    """)
-    books = cur.fetchall()
-    cur.close()
-    conn.close()
-    return books
-
-
 
 if __name__ == "__main__":
-    # criar_db()
+    criar_db()
 
     sql_create_books_table = """
     CREATE TABLE IF NOT EXISTS books (
