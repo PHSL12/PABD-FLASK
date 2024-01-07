@@ -1,50 +1,56 @@
 /* static/css/style.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #2980b9, #6dd5fa);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-h1 {
-    font-size: 36px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-
 table {
-    margin: auto;
+    width: 100%;
     border-collapse: collapse;
-    width: 80%;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    border: 1px solid #e0e0e0;
-    padding: 12px;
+    border: 1px solid #dddddd;
     text-align: left;
+    padding: 8px;
 }
 
 th {
-    background-color: #4caf50;
+    background-color: #f2f2f2;
+}
+
+form {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* Classe genérica para botões e links estilizados como botões */
+.button, input[type="submit"] {
+    padding: 10px 15px;
+    background-color: #4CAF50; /* Verde como cor primária para todos os botões */
     color: white;
-    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5px;
 }
 
-tr:nth-child(even) {
-    background-color: #e8f5e9;
+.button:hover, input[type="submit"]:hover {
+    background-color: #45a049; /* Um tom mais escuro de verde no hover */
 }
 
-tr:hover {
-    background-color: #dcedc8;
-  }
+/* Removendo estilos duplicados */
+.add-button {
+    margin-bottom: 20px;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Atualizar Projeto</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+<body>
+    <form action="{{ url_for('update', id=book.id) }}" method="post">
+        Título do livro: <input type="text" name="title" value="{{ book.title }}"><br>
+        Autor: <input type="date" name="autor" value="{{ project.autor}}"><br>
+        Ano: <input type="date" name="year" value="{{ project.year }}"><br>
+        Gênero: <input type="date" name="gender" value="{{ project.gender}}"><br>
+        <input type="submit" value="update book">
+    </form>
+</body>
+</html>
