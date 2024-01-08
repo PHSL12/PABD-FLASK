@@ -34,12 +34,12 @@ def criar_tabelas(sql):
             cursor.execute(sql)
 
 
-def create_book(book_id, book_title, book_autor, book_year, book_gender):
+def create_book(book_title, book_autor, book_year, book_gender):
     with conectar_db() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO books (id, title, autor, year, gender) VALUES (%s, %s, %s, %s, %s)",
-                (book_id, book_title, book_autor, book_year, book_gender),
+                "INSERT INTO books (title, autor, year, gender) VALUES (%s, %s, %s, %s)",
+                (book_title, book_autor, book_year, book_gender),
             )
             conn.commit()
 
@@ -91,23 +91,20 @@ def update_book(id, title, autor, year, gender):
 def remove_book(id):
     with conectar_db() as conn:
         with conn.cursor() as cursor:
-            cursor.execute("DELETE FROM books WHERE id = %s", (id))
+            cursor.execute("DELETE FROM books WHERE id = %s", (id,))
             conn.commit()
 
 
-if __name__ == "__main__":
-    criar_db()
 
-    sql_create_books_table = """
-    CREATE TABLE IF NOT EXISTS books (
-        id integer PRIMARY KEY,
-        title text NOT NULL,
-        autor text NOT NULL,
-        year integer NOT NULL,
-        gender text NOT NULL
-    );"""
+#criar_db()
 
-    criar_tabelas(sql_create_books_table)
+sql_create_books_table = """
+CREATE TABLE IF NOT EXISTS books (
+    id SERIAL,
+    title text NOT NULL,
+    autor text NOT NULL,
+    year integer NOT NULL,
+    gender text NOT NULL
+);"""
 
-    create_book(1, "Confissões", "Santo Agostinho", 397, "Teologia")
-    create_book(2, "A Revolta de Atlas", "Ayn Rand", 1957, "Filosofia")
+#criar_tabelas(sql_create_books_table)

@@ -2,15 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% extends "base.html" %}
-    {% block title %}Dashboard{% endblock %}
     <meta charset="UTF-8">
     <title>Biblioteca PJV</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='../css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="add-button">
-        <a href="{{ url_for('inserir') }}" class="button">Adicionar Novo Livro</a>
+        <a href="{{url_for('create')}}" class="button">Adicionar Novo Livro</a>
     </div>
     <table>
         <thead>
@@ -23,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for project_id, project_name, project_begin_date,project_end_game, task_name, task_priority, task_status in projects_tasks %}
+            {% for book_id, book_title, book_autor, book_year, book_gender in books %}
             <tr>
                 <td>{{ book_id }}</td>
                 <td>{{ book_title }}</td>

@@ -3,16 +3,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        {% extends "base.html" %}
-        {% block title %}Dashboard{% endblock %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     </head>
 <body>
-    <form action="{{ url_for('inserir') }}" method="post">
+    <form action="{{url_for('create') }}" method="post">
         Título do livro: <input type="text" name="title"><br>
-        Autor: <input type="date" name="autor"><br>
-        Ano: <input type="date" name="year"><br>
-        Gênero: <input type="date" name="gender"><br>
+        Autor: <input type="text" name="autor"><br>
+        Ano: <input type="text" name="year"><br>
+        Gênero: <input type="text" name="gender"><br>
         <input type="submit" value="crate book">
     </form>
 </body>
