@@ -1,6 +1,13 @@
 /* static/css/style.css */
-table {
+
+header {
+    display: flex;
+    justify-content: center;
     width: 100%;
+}
+
+table {
+    width: 80%;
     border-collapse: collapse;
 }
 
@@ -15,12 +22,16 @@ th {
 }
 
 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 300px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 input[type="text"],
@@ -47,10 +58,4 @@ input[type="date"] {
 
 .button:hover, input[type="submit"]:hover {
     background-color: #45a049; /* Um tom mais escuro de verde no hover */
-}
-
-/* Removendo estilos duplicados */
-.add-button {
-    margin-bottom: 20px;
-    text-align: center;
 }

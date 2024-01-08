@@ -12,6 +12,10 @@ def create():
         autor = request.form["autor"]
         year = request.form["year"]
         gender = request.form["gender"]
+
+        if not year.isdigit():
+            return render_template("create.html", error="year is not int")
+        
         create_book(title, autor, year, gender)
         return redirect(url_for("books_list"))
     return render_template("create.html")
@@ -26,6 +30,10 @@ def update(id):
         autor = request.form["autor"]
         year = request.form["year"]
         gender = request.form["gender"]
+
+        if not year.isdigit():
+            return render_template("update.html", book=book, error="year is not int")
+    
         update_book(id, title, autor, year, gender)
         return redirect(url_for("books_list"))
     return render_template("update.html", book=book)
